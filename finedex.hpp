@@ -1,0 +1,3 @@
+namespace findex {
+    struct FINEdex{};
+}

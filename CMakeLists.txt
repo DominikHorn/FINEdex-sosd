@@ -1,14 +1,15 @@
-cmake_minimum_required(VERSION 3.2)
-project(xxx)
-ADD_DEFINITIONS(-std=c++17)
+cmake_minimum_required(VERSION 3.19)
+project("FINEdex-sosd" VERSION 1.0
+    DESCRIPTION "A header only cmake/c++ library that exposes FINEdex for use in SOSD. See README for more information"
+    HOMEPAGE_URL "https://github.com/DominikHorn/FINEdex-sosd"
+    LANGUAGES CXX)
 
-include_directories("include")
-include_directories("/opt/intel/oneapi/mkl/2021.1.1/include")
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME} INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
+target_sources(${PROJECT_NAME} INTERFACE finedex.hpp include/)
 
-set(CMAKE_CXX_FLAGS "-g -msse -march=core-avx2")
-
-
-
-file(GLOB finedex_benchmark_SORUCES ""  "finedex_benchmark.cpp" )
-add_executable(finedex_benchmark ${finedex_benchmark_SORUCES} )
-target_link_libraries(finedex_benchmark pthread)
+# Add example code only if this repo is not included by a root project via
+get_directory_property(hasParent PARENT_DIRECTORY)
+if (NOT hasParent)
+  add_subdirectory(src)
+endif()
