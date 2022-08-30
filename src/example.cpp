@@ -1,5 +1,6 @@
 #include <finedex.hpp>
 
 int main() {
-    return 0;
+  finedex::FINEdex d;
+  return 0;
 }

@@ -6,7 +6,7 @@
 #include "level_bin_con.h"
 #include "util.h"
 
-namespace aidel{
+namespace finedex::aidel{
 
 template<class key_t, class val_t>
 class AidelModel {
@@ -84,7 +84,7 @@ private:
 
 };
 
-} //namespace aidel
+} //namespace finedex::aidel
 
 
 

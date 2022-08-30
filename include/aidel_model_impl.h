@@ -4,7 +4,7 @@
 #include "aidel_model.h"
 #include "util.h"
 
-namespace aidel{
+namespace finedex::aidel{
 
 template<class key_t, class val_t>
 AidelModel<key_t, val_t>::AidelModel(){
@@ -558,7 +558,7 @@ void AidelModel<key_t, val_t>::resort(std::vector<key_t> &keys, std::vector<val_
     }
 }
 
-} //namespace aidel
+} //namespace finedex::aidel
 
 
 
