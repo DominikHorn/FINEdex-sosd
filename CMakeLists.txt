@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project("FINEdex-sosd" VERSION 1.0
+project("finedex-sosd" VERSION 1.0
     DESCRIPTION "A header only cmake/c++ library that exposes FINEdex for use in SOSD. See README for more information"
     HOMEPAGE_URL "https://github.com/DominikHorn/FINEdex-sosd"
     LANGUAGES CXX)
