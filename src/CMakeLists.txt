@@ -24,9 +24,9 @@ else()
 endif()
 
 # ==== Example target ====
-add_executable(findex_example example.cpp)
+add_executable(finedex_example example.cpp)
 
 # Add intel mkl
 find_package(MKL CONFIG REQUIRED)
-target_compile_options(findex_example PUBLIC $<TARGET_PROPERTY:MKL::MKL,INTERFACE_COMPILE_OPTIONS>)
-target_link_libraries(findex_example $<LINK_ONLY:MKL::MKL> ${PROJECT_NAME})
+target_compile_options(finedex_example PUBLIC $<TARGET_PROPERTY:MKL::MKL,INTERFACE_COMPILE_OPTIONS>)
+target_link_libraries(finedex_example ${PROJECT_NAME} $<LINK_ONLY:MKL::MKL>)
